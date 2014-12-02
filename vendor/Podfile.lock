@@ -1,0 +1,18 @@
+PODS:
+  - FontAwesomeKit/Core (2.1.8)
+  - FontAwesomeKit/IonIcons (2.1.8):
+    - FontAwesomeKit/Core
+  - MONActivityIndicatorView (0.0.1)
+  - RESideMenu (4.0.7)
+
+DEPENDENCIES:
+  - FontAwesomeKit/IonIcons
+  - MONActivityIndicatorView
+  - RESideMenu
+
+SPEC CHECKSUMS:
+  FontAwesomeKit: a2edea3111dab107b4cc43b85881b404eb063385
+  MONActivityIndicatorView: 728965121e59cef32c1bc4676f6868e35f3c8c61
+  RESideMenu: a9c1cd2e64e60e1d3166ddac01a83e215a0e4d30
+
+COCOAPODS: 0.35.0
