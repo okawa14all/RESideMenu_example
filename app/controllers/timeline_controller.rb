@@ -55,6 +55,18 @@ class TimelineController < UIViewController
 
   def init_nav
     self.title = @current_room[:name]
+
+    right_icon = FAKIonIcons.earthIconWithSize 20
+    right_icon.addAttribute(NSForegroundColorAttributeName, value: rmq.color.dark_gray)
+    right_icon_image = right_icon.imageWithSize(CGSizeMake(20, 20))
+    self.navigationItem.tap do |nav|
+      nav.rightBarButtonItem = UIBarButtonItem.alloc.initWithImage(
+        right_icon_image.imageWithRenderingMode(UIImageRenderingModeAlwaysOriginal),
+        style: UIBarButtonItemStylePlain,
+        target: self,
+        action: :open_notification_controller
+      )
+    end
   end
 
   def toolbar_buttons
@@ -105,6 +117,14 @@ class TimelineController < UIViewController
 
   def open_new_post_controller
     puts '[TL] open_new_post_controller'
+  end
+
+  def open_notification_controller
+    puts '[TL] open_notification_controller'
+    notification_controller = NotificationController.new
+    navigation_controller = UINavigationController.alloc.initWithRootViewController(notification_controller)
+    navigation_controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve
+    self.presentViewController(navigation_controller, animated: true, completion: nil)
   end
 
   # ----------- RESideMenu Delegate ----------
